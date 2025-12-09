@@ -30,7 +30,11 @@ pipeline {
             }
 
             steps {
-                sh 'echo "Running tests..."' 
+                sh '''
+                    echo "Running tests..."
+                    ls -la build/    
+                ''' 
+
             }
         }
 
