@@ -24,7 +24,7 @@ pipeline {
         }
 
 
-        stage('Deploy') {
+        stage('Tests') {
             parallel {
                 stage('Test') {
                     agent {
@@ -63,7 +63,7 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Deploy') {
             agent {
                 docker {
                     image 'node:18-alpine'
