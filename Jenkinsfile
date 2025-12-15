@@ -87,6 +87,10 @@ pipeline {
                     reuseNode true
                 }
             }
+
+            environment {
+                CI_ENVIRONMENT_URL = 'TO_BE_SET_IN_SCRIPT'
+            }
             
             steps {
                 sh '''              
