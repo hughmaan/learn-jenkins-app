@@ -80,11 +80,7 @@ pipeline {
             }
         }
 
-        stage('Approval'){
-            steps {
-                input 'Ready to deploy'
-            }
-        }
+
 
         stage('Deploy to Staging') {
             agent {
@@ -101,6 +97,12 @@ pipeline {
                     node_modules/.bin/netlify status
                     node_modules/.bin/netlify deploy --dir=build 
                 '''
+            }
+        }
+
+        stage('Approval'){
+            steps {
+                input 'Ready to deploy'
             }
         }
 
